@@ -1,4 +1,8 @@
-## Cálculo de Intervalos de Confianza de Monte Carlo
+Cálculo de Intervalos de Confianza de Monte Carlo
+======
+
+Ejemplo 1
+---------
 ### Número de simulaciones
 ```R
 m <- 1000
@@ -192,7 +196,7 @@ cat("Intervalo de Confianza de Monte Carlo para el intervalo = (",
 ```
 ### Resultados
 
-| #        | Límite inferior | Límite superior  |
+|         | Límite inferior | Límite superior  |
 | ------------- |--------:| -----:|
 | Media | **861.0241** | **929.5535** |
 | Desviación Típica | **150.2904** | **196.1969** |
@@ -203,3 +207,24 @@ cat("Intervalo de Confianza de Monte Carlo para el intervalo = (",
 Si comparamos los resultados obtenidos con los histogramas del principio, vemos que los resultados tienen coherencia
 
 ![alt text](https://github.com/louri91/rprogramming/raw/master/MonteCarloCI/img/Rplot.png "Histogramas")
+
+
+Ejemplo 2
+----------
+### Suponemos un administrador de una web, preocupado por tener ancho de banda suficiente para una web concreta. Está interesado en la distribución del máximo número de visitantes a la web en cualquier momento. De los datos que tiene, el administrador se ha dado cuenta que la distribución del número de visitantes de una web concreta puede ser modelada como una distribución gamma, con parámetros (shape)alpha = 3 y (rate)betha = 5. Considera encontrar un intervalo de confianza aproximado al 95% para el número máximo de visitantes de la web en un determinado momento utilizando los métodos de Monte Carlo. ¿Dependerá el intervalo del tamaño de la muestra utilizada?
+#### Para poder contestar a la pregunta, los intervalos de confianza de Monte Carlo están basados en una muestra de 1000 ejemplos de tamaño n, para n=10,50,100,...,500,1000, resumida en la siguiente tabla
+
+| n | Media(Max) | Intervalo de Confianza de Monte Carlo 95% | Anchura del intervalo  |
+| ------------- |--------| -----| -----|
+| 10 | 30.82 | (17.76,52.08) | 34.32 |
+| 50 | 41.52 | (29.19,60.81) | 31.62 |
+| 100 | 45.45 | (33.56,62.82) | 29.26 |
+| 150 | 48.17 | (36.49,67.50) | 31.01 |
+| 200 | 50.09 | (38.84,67.13) | 28.29 |
+| 250 | 51.05 | (39.02,68.44) | 29.42 |
+| 300 | 52.35 | (40.21,69.78) | 29.57 |
+| 350 | 52.73 | (41.52,71.19) | 29.67 |
+| 400 | 54.35 | (42.64,72.32) | 29.68 |
+| 450 | 54.67 | (42.77,73.03) | 30.26 |
+| 500 | 55.48 | (43.45,72.24) | 28.79 |
+| 1000 | 59.91 | (48.75,79.78) | 31.03 |
